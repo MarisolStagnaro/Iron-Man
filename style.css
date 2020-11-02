@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image:url(fondo1.jpg);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 99vh;  
+}
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 600px;
+    height: 380px;
+    margin: 20px;
+    padding: 2rem;
+    border-radius: 30px;
+    background: linear-gradient(90deg, rgb(39, 2, 2) 0%, rgb(121, 9, 18) 100%);
+    box-shadow: 1px 1px 3px rgb(228, 248, 245);
+}
+
+.card img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 330px;
+    transition: 0.7s;
+}
+
+
+.card:hover img {
+    left: 85%;
+    height: 450px;
+}
+
+
+.card:hover .content {
+    left: 0;
+    opacity: 1;
+}
+
+.card::before {
+    position: absolute;
+    content: 'the avengers';
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    background-color: #111;
+    color: rgb(252, 250, 240);
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.card .content {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.card .content h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    font-family: 'Shadows Into Light', cursive;
+    margin-bottom: 10px;
+}
+
+.card .content p {
+    font-family: 'Amatic SC', cursive;
+    color: #fafafa;
+    font-size: 1.5rem;
+}
+
+.card .content a {
+    font-family: 'Shadows Into Light', cursive;
+    color: #111;
+    background-color: rgb(194, 163, 25);
+    text-shadow: 1px 1px 2px  rgb(97, 99, 98);
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 1rem;
+    padding: 10px 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+@media (max-width: 991px) {
+    body{
+        background-image: url(fondo-celular.jpg);
+    }
+    .card {
+        margin: 5px;
+        width: auto;
+        max-width: 600px;
+        transition: 0.5s;
+        align-items: flex-start;
+    }
+
+    .card:hover {
+        height: 500px;
+    }
+
+    .card:hover img{
+        left: 70%;
+        height: 300px;
+    }
+
+    .card .content {
+        width: 100%;
+        /* padding: 40px; */
+        left: 0;
+    }
+    
+    .card .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .card .content p {
+        font-size: 18px;
+    }
+}
